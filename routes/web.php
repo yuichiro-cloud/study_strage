@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('study/index');
 });
+
+// Route::group(['middleware' => ['auth']], function(){
+    Route::get('/', 'StudyController@index')->name('study.index');
+    // Route::get('/post', 'StudyController@index')->name('study.index');
+    Route::get('/new', 'StudyController@new')->name('study.new');
+    Route::post('/new', 'StudyController@create')->name('study.create');
+    Route::get('/study/{id}', 'StudyController@show')->name('post.show');
+
+//   });
