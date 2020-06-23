@@ -9,9 +9,9 @@ class StudyController extends Controller
 {
 
     public function index(Request $request){
-        $studies = Study::all();
+        $studies = Study::orderBy('id','DESC')->take(10)->get();
         return view('study.index',['studies'=>$studies]);
-        // return $study;
+        // return $studies;
     }
 
     public function new(Request $request){

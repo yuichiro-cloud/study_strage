@@ -11,8 +11,6 @@
             <header>
                 <div class="nav">
                     <h2>STUDY STRAGE</h1>
-                    <a>LogOut</a>
-                    <!-- <button class="pulldown-menu">menu</button> -->
                 </div>
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
@@ -33,7 +31,7 @@
                     <button class="ReadMore">Read More</button>
                     <h4>latest 10</h4>
                     @foreach($studies as $s)
-                    <li>{{$s->name}}</li>
+                    <li style="margin:10px;">{{$s->name}}<span style="margin-left:50px; font-size:15px;">{{date('Y年m月d日 H時i分s秒',strtotime($s->created_at))}}</span></li>
                     @endforeach
                 </div>
                 <div class="right-content">
