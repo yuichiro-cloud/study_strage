@@ -13,10 +13,15 @@ class StudiesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('studies')->insert([
-            'name' => Str::random(10),
-            'created_at'=>'2020/1/1',
-            'updated_at'=>'2020/1/2',
-        ]);
+        // DB::table('studies')->insert([
+        //     'name' => Str::random(10),
+        //     'created_at'=>'2020/1/1',
+        //     'updated_at'=>'2020/1/2',
+        // ]);
+        // factory(App\Study::class, 50)->create()->each(function ($study) {
+        //     $study->posts()->save(factory(App\Post::class)->make());
+        // });
+        factory(\App\Study::class, 50)->create();
+
     }
 }
