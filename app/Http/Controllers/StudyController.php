@@ -8,11 +8,12 @@ class StudyController extends Controller
 {
 
     public function index(Request $request){
+        // $data = Study::find
         return view('study.index');
     }
 
     public function new(Request $request){
-        return view('study.new');
+        return view('study.create');
     }
 
     public function show($id){

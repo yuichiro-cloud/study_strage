@@ -23,7 +23,7 @@ Route::get('/', function () {
     Route::post('/create', 'StudyController@create')->name('study.store');
     Route::get('/study/{id}', 'StudyController@show')->name('post.show');
     Route::get('/study/{id}/edit','StudyController@edit')->name('study.edit');
-    Route::post('study', 'TasksController@store')->name('study.store');
+    Route::post('study', 'StudyController@store')->name('study.store');
     Route::put('study/{id}', 'StudyController@update')->name('study.update');
     Route::delete('study/{id}', 'StudyController@delete')->name('study.delete');
 
