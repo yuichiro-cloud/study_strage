@@ -31,7 +31,7 @@
                     <button class="ReadMore">Read More</button>
                     <h4>latest 10</h4>
                     @foreach($studies as $s)
-                    <li style="margin:10px;">{{$s->name}}<span style="margin-left:50px; font-size:15px;">{{date('Y年m月d日 H時i分s秒',strtotime($s->created_at))}}</span></li>
+                    <a style="display:block; margin:10px;" href="/study/{{$s->id}}">{{$s->keyword}}<span style="margin-left:50px; font-size:15px;">{{date('Y年m月d日 H時i分s秒',strtotime($s->created_at))}}</span></a>
                     @endforeach
                 </div>
                 <div class="right-content">
