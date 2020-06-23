@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Study;
 
 class StudyController extends Controller
 {
 
     public function index(Request $request){
-        // $data = Study::find
-        return view('study.index');
+        $studies = Study::all();
+        return view('study.index',['studies'=>$studies]);
+        // return $study;
     }
 
     public function new(Request $request){
