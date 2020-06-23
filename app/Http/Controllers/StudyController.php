@@ -14,7 +14,7 @@ class StudyController extends Controller
         // return $studies;
     }
 
-    public function new(Request $request){
+    public function create(Request $request){
         return view('study.create');
     }
 

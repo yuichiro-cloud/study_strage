@@ -15,7 +15,12 @@ class CreateStudiesTable extends Migration
     {
         Schema::create('studies', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            // $table->string('name');
+            $table->string('language');
+            $table->integer('time_start');
+            $table->integer('time_end');
+            $table->string('memo');
+            $table->string('keyword');
             $table->timestamps();
         });
     }
