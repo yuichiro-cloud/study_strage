@@ -19,9 +19,12 @@ Route::get('/', function () {
 
 // Route::group(['middleware' => ['auth']], function(){
     Route::get('/', 'StudyController@index')->name('study.index');
-    // Route::get('/post', 'StudyController@index')->name('study.index');
-    Route::get('/new', 'StudyController@new')->name('study.new');
-    Route::post('/new', 'StudyController@create')->name('study.create');
+    Route::get('/create', 'StudyController@create')->name('study.create');
+    Route::post('/create', 'StudyController@create')->name('study.store');
     Route::get('/study/{id}', 'StudyController@show')->name('post.show');
+    Route::get('/study/{id}/edit','StudyController@edit')->name('study.edit');
+    Route::post('study', 'TasksController@store')->name('study.store');
+    Route::put('study/{id}', 'StudyController@update')->name('study.update');
+    Route::delete('study/{id}', 'StudyController@delete')->name('study.delete');
 
 //   });

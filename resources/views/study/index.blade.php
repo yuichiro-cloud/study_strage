@@ -24,7 +24,7 @@
 </head>
 
 <body>
-
+    index
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <a class="navbar-brand" href="#">{{ config('app.name', 'Laravel') }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
