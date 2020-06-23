@@ -3,6 +3,7 @@
     <head>
         <title>StudyStrage</title>
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/create.js') }}" defer></script>
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/create.css') }}" rel="stylesheet">
     </head>
@@ -44,7 +45,7 @@
                     </div>
                     <h5>Study Start</h5>
                     <div class="form-row">
-                        <div style="text-align:right;" class="form-group col">
+                        <div style="text-align:right;" class="form-group col" id="study_start_h">
                             <label for="exampleFormControlSelect1">Hour</label>
                             <select class="form-control" id="exampleFormControlSelect1">
                             <option>00</option>
@@ -74,7 +75,7 @@
                             </select>
                             <label for="exampleFormControlSelect1">時</label>
                         </div>
-                        <div style="text-align:right;" class="form-group col-md-6">
+                        <div style="text-align:right;" class="form-group col-md-6" id="study_start_m">
                             <label for="exampleFormControlSelect1">Minute</label>
                             <select class="form-control" id="exampleFormControlSelect1">
                             <option>00</option>
@@ -140,11 +141,11 @@
                             </select>
                             <label for="exampleFormControlSelect1">分</label>
                         </div>
-                        <input name='study_start' type='hidden' value=''>
+                        <input id="start-input" name='study_start' type='hidden' value='0000'>
                     </div>
                     <h5>Study End</h5>
                     <div class="form-row">
-                        <div style="text-align:right;" class="form-group col">
+                        <div style="text-align:right;" class="form-group col" id="study_end_h">
                             <label for="exampleFormControlSelect1">Hour</label>
                             <select class="form-control" id="exampleFormControlSelect1">
                             <option>00</option>
@@ -174,7 +175,7 @@
                             </select>
                             <label for="exampleFormControlSelect1">時</label>
                         </div>
-                        <div style="text-align:right;" class="form-group col-md-6">
+                        <div style="text-align:right;" class="form-group col-md-6" id="study_end_m">
                             <label for="exampleFormControlSelect1">Minute</label>
                             <select class="form-control" id="exampleFormControlSelect1">
                             <option>00</option>
@@ -240,7 +241,7 @@
                             </select>
                             <label for="exampleFormControlSelect1">分</label>
                         </div>
-                        <input name='study_end' type='hidden' value=''>
+                        <input id="end-input" name='study_end' type='hidden' value='0000'>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Memo Area</label>
