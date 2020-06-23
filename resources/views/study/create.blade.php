@@ -28,7 +28,8 @@
                     </ul>
             </header>
             <div class="main">
-                <form action='{{ route('study.store') }}' method='post'>
+                <form action="/store" method='post'>
+                    @csrf
                     <div class="form-group">
                         <label for="exampleFormControlInput1">KeyWord</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="laravel training" name='keyword'>

@@ -18,6 +18,18 @@ class StudyController extends Controller
         return view('study.create');
     }
 
+    public function store(Request $request){
+        $study = new Study;
+        $study->keyword = $request->keyword;
+        $study->language = $request->language;
+        $study->time_start = $request->study_start;
+        $study->time_end = $request->study_end;
+        $study->memo = $request->memo;
+        $study->save();
+        return redirect('/');
+
+    }
+
     public function show($id){
         return view('study.show');
     }

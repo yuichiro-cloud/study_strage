@@ -17,8 +17,8 @@ class CreateStudiesTable extends Migration
             $table->id();
             // $table->string('name');
             $table->string('language');
-            $table->integer('time_start');
-            $table->integer('time_end');
+            $table->string('time_start');
+            $table->string('time_end');
             $table->string('memo');
             $table->string('keyword');
             $table->timestamps();
