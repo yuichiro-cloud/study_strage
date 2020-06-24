@@ -36,15 +36,24 @@ class StudyController extends Controller
 
     public function show($id){
         $study = Study::find($id);
-        $time = (int)$study->time_end - (int)$study->time_start;
-        $hour = intdiv($time,60);
-        $minute = $time%60;
+        $time_start = $study->time_start;
+        $time_start_minutes = (int)substr($time_start,0,2)*60 + (int)substr($time_start,2,4);
+        $time_end = $study->time_end;
+        $time_end_minutes = (int)substr($time_end,0,2)*60 + (int)substr($time_end,2,4);
+        $time_dif = $time_end_minutes - $time_start_minutes;
+        if($time_dif>=0){
+            $time_hour = intdiv($time_dif,60);
+            $time_minute = $time_dif%60;
+        }else{
+            $time_dif+=1440;
+            $time_hour = intdiv($time_dif,60);
+            $time_minute = $time_dif%60;
+        }
+
         $parser = new Markdown();
         $mark_memo = $parser->parse($study->memo);
 
-        // return view('study.show',['study'=>$study,'hour'=>$hour,'minute'=>$minute,'mark_memo'=>$mark_memo]);
-        return ($study);
-
+        return view('study.show',['study'=>$study,'time_hour'=>$time_hour,'time_minute'=>$time_minute,'mark_memo'=>$mark_memo]);
     }
 
     public function edit(Request $request){
@@ -62,7 +71,6 @@ class StudyController extends Controller
 
 
         return view('study.edit',['study'=>$study,'start_h'=>$start_h,'start_m'=>$start_m,'array_h'=>$array_h,'array_m'=>$array_m,'end_h'=>$end_h,'end_m'=>$end_m]);
-        // return ($study);
     }
 
     public function update(Request $request,$id){

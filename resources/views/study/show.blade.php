@@ -29,7 +29,7 @@
                         <span class="nav-link">Language:{{$study->language}}</span>
                     </li>
                     <li class="nav-item">
-                        <span class="nav-link">Time:{{$hour}}時間{{$minute}}分</span>
+                        <span class="nav-link">Time:{{$time_hour}}時間{{$time_minute}}分</span>
                     </li>
                 </ul>
                 <div class="content">
