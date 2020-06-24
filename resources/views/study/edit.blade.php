@@ -29,7 +29,7 @@
                     </ul>
             </header>
             <div class="main">
-                <form action="/study/{{$study->id}}/update" method='post'>
+                <form name="form1" action="/study/{{$study->id}}/update" method='post'>
                     @method('PUT')
                     @csrf
                     <div class="form-group">
@@ -109,7 +109,8 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Memo Area</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='memo'>{{$study->memo}}</textarea>
+                        <span class="code-button">code</span>
+                        <textarea class="form-control memo-area" id="exampleFormControlTextarea1" rows="20" name='memo'>{{$study->memo}}</textarea>
                     </div>
                     <input style="display:block; margin:0 auto;" type="submit" value="put" />
                 </form>

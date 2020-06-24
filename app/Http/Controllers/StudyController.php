@@ -50,10 +50,13 @@ class StudyController extends Controller
             $time_minute = $time_dif%60;
         }
 
-        $parser = new Markdown();
-        $mark_memo = $parser->parse($study->memo);
+        // $parser = new Markdown();
+        // $mark_memo = $parser->parse($study->memo);
+
+        $mark_memo = $study->memo;
 
         return view('study.show',['study'=>$study,'time_hour'=>$time_hour,'time_minute'=>$time_minute,'mark_memo'=>$mark_memo]);
+        // return ($mark_memo);
     }
 
     public function edit(Request $request){

@@ -19,7 +19,7 @@ class CreateStudiesTable extends Migration
             $table->string('language');
             $table->string('time_start');
             $table->string('time_end');
-            $table->string('memo');
+            $table->text('memo');
             $table->string('keyword');
             $table->timestamps();
         });

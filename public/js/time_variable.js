@@ -127,6 +127,16 @@ $(function () {
     study_end_cal(styEndH, styEndM);
   });
 });
+$(function () {
+  $('.code-button').on('click', function () {
+    console.log('ok');
+    var content = document.form1.memo.value;
+    document.getElementsByClassName("memo-area").value = "ooooo";
+    $('.memo-area').text("<pre><code>".concat(content, "</code></pre>"));
+    $('.memo-area').attr('style', "background-color:gray;");
+    console.log(content); // $('#memo-area').text(`<pre><code></code></pre>`);
+  });
+});
 
 /***/ }),
 

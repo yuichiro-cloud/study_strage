@@ -90,6 +90,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Memo Area</label>
+                        <span>code</span>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='memo'></textarea>
                     </div>
                     <input style="display:block; margin:0 auto;" type="submit" value="post" />

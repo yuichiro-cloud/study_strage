@@ -33,3 +33,16 @@ $(function(){
     })
 
 })
+
+$(function(){
+    $('.code-button').on('click',function(){
+        console.log('ok')
+        const content = document.form1.memo.value
+        document.getElementsByClassName("memo-area").value = "ooooo"
+        $('.memo-area').text(`<pre><code>${content}</code></pre>`)
+        $('.memo-area').attr('style',"background-color:gray;")
+        console.log(content)
+        // $('#memo-area').text(`<pre><code></code></pre>`);
+
+    });
+});

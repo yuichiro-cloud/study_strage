@@ -4,7 +4,13 @@
         <title>StudyStrage</title>
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('js/highlight.pack.js') }}" rel="stylesheet">
+        <link href="{{ asset('css/tomorrow.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/show.css') }}" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
     </head>
     <body>
         <div class="container">
