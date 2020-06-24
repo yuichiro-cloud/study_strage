@@ -81,30 +81,36 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/create.js":
-/*!********************************!*\
-  !*** ./resources/js/create.js ***!
-  \********************************/
+/***/ "./resources/js/edit.js":
+/*!******************************!*\
+  !*** ./resources/js/edit.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/macdonalds/laravel/study_strage/resources/js/create.js'");
+$(function () {// const study_start_default_hour = $('#start-input').val().slice(0,2);
+  // const study_start_default_minute = $('#start-input').val().slice(2,4);
+  // const study_end_default_hour = $('#end-input').val().slice(0,2);
+  // const study_end_default_minute = $('#end-input').val().slice(2,4);
+  // console.log(study_start_default_hour)
+  // <div class="study-start-before"></div>
+});
 
 /***/ }),
 
-/***/ 3:
-/*!**************************************!*\
-  !*** multi ./resources/js/create.js ***!
-  \**************************************/
+/***/ 4:
+/*!************************************!*\
+  !*** multi ./resources/js/edit.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/study_strage/resources/js/create.js */"./resources/js/create.js");
+module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/study_strage/resources/js/edit.js */"./resources/js/edit.js");
 
 
 /***/ })

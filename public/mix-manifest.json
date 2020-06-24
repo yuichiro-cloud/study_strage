@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/bootstrap.js": "/js/bootstrap.js",
-    "/js/create.js": "/js/create.js",
-    "/js/index.js": "/js/index.js"
+    "/js/edit.js": "/js/edit.js",
+    "/js/index.js": "/js/index.js",
+    "/js/time_variable.js": "/js/time_variable.js"
 }

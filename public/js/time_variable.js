@@ -86,25 +86,58 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/create.js":
-/*!********************************!*\
-  !*** ./resources/js/create.js ***!
-  \********************************/
+/***/ "./resources/js/time_variable.js":
+/*!***************************************!*\
+  !*** ./resources/js/time_variable.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/macdonalds/laravel/study_strage/resources/js/create.js'");
+$(function () {
+  function study_start_cal(h, m) {
+    $('#start-input').val(h + m);
+    console.log(h);
+    console.log(m);
+  }
+
+  function study_end_cal(h, m) {
+    $('#end-input').val(h + m);
+    console.log(h);
+    console.log(m);
+  }
+
+  $('#study_start_h').on('change', function () {
+    var styStrH = $("#study_start_h option:selected").text();
+    var styStrM = $('#start-input').val().slice(2, 4);
+    study_start_cal(styStrH, styStrM);
+  });
+  $('#study_start_m').on('change', function () {
+    var styStrH = $('#start-input').val().slice(0, 2);
+    var styStrM = $("#study_start_m option:selected").text();
+    study_start_cal(styStrH, styStrM);
+  });
+  $('#study_end_h').on('change', function () {
+    var styEndH = $("#study_end_h option:selected").text();
+    var styEndM = $('#end-input').val().slice(2, 4);
+    study_end_cal(styEndH, styEndM);
+  });
+  $('#study_end_m').on('change', function () {
+    var styEndH = $('#end-input').val().slice(0, 2);
+    var styEndM = $("#study_end_m option:selected").text();
+    study_end_cal(styEndH, styEndM);
+  });
+});
 
 /***/ }),
 
 /***/ 3:
-/*!**************************************!*\
-  !*** multi ./resources/js/create.js ***!
-  \**************************************/
+/*!*********************************************!*\
+  !*** multi ./resources/js/time_variable.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/study_strage/resources/js/create.js */"./resources/js/create.js");
+module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/study_strage/resources/js/time_variable.js */"./resources/js/time_variable.js");
 
 
 /***/ })

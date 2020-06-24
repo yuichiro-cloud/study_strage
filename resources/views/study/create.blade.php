@@ -3,7 +3,7 @@
     <head>
         <title>StudyStrage</title>
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/create.js') }}" defer></script>
+        <script src="{{ asset('js/time_variable.js') }}" defer></script>
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/create.css') }}" rel="stylesheet">
     </head>
