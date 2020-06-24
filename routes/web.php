@@ -21,9 +21,9 @@ Route::get('/', function () {
     Route::get('/', 'StudyController@index')->name('study.index');
     Route::get('/create', 'StudyController@create')->name('study.create');
     Route::post('/store', 'StudyController@store')->name('study.store');
-    Route::get('/study/{id}', 'StudyController@show')->name('post.show');
     Route::get('/study/{id}/edit','StudyController@edit')->name('study.edit');
-    Route::put('study/{id}', 'StudyController@update')->name('study.update');
+    Route::put('/study/{id}/update', 'StudyController@update')->name('study.update');
     Route::delete('study/{id}', 'StudyController@delete')->name('study.delete');
+    Route::get('/study/{id}', 'StudyController@show')->name('study.show');
 
 //   });

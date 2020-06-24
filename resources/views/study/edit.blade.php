@@ -29,7 +29,8 @@
                     </ul>
             </header>
             <div class="main">
-                <form action="/store" method='post'>
+                <form action="/study/{{$study->id}}/update" method='post'>
+                    @method('PUT')
                     @csrf
                     <div class="form-group">
                         <label for="exampleFormControlInput1">KeyWord</label>

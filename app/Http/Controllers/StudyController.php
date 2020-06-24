@@ -42,12 +42,13 @@ class StudyController extends Controller
         $parser = new Markdown();
         $mark_memo = $parser->parse($study->memo);
 
-        return view('study.show',['study'=>$study,'hour'=>$hour,'minute'=>$minute,'mark_memo'=>$mark_memo]);
-        // return ($mark_memo);
+        // return view('study.show',['study'=>$study,'hour'=>$hour,'minute'=>$minute,'mark_memo'=>$mark_memo]);
+        return ($study);
+
     }
 
-    public function edit($id){
-        $study = Study::find($id);
+    public function edit(Request $request){
+        $study = Study::find($request->id);
         $time_start = $study->time_start;
         $time_end = $study->time_end;
         $start_h = substr($time_start,0,2);
@@ -61,6 +62,18 @@ class StudyController extends Controller
 
 
         return view('study.edit',['study'=>$study,'start_h'=>$start_h,'start_m'=>$start_m,'array_h'=>$array_h,'array_m'=>$array_m,'end_h'=>$end_h,'end_m'=>$end_m]);
-        // return ($start_h);
+        // return ($study);
+    }
+
+    public function update(Request $request,$id){
+
+        $study = Study::find($id);
+        $study->keyword = $request->keyword;
+        $study->language = $request->language;
+        $study->time_start = $request->study_start;
+        $study->time_end = $request->study_end;
+        $study->memo = $request->memo;
+        $study->save();
+        return redirect('/');
     }
 }
