@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Study;
 
+use cebe\markdown\Markdown as Markdown;
+
 class StudyController extends Controller
 {
 
@@ -31,6 +33,18 @@ class StudyController extends Controller
     }
 
     public function show($id){
-        return view('study.show');
+        $study = Study::find($id);
+        $time = (int)$study->time_end - (int)$study->time_start;
+        $hour = intdiv($time,60);
+        $minute = $time%60;
+        $parser = new Markdown();
+        $mark_memo = $parser->parse($study->memo);
+
+        return view('study.show',['study'=>$study,'hour'=>$hour,'minute'=>$minute,'mark_memo'=>$mark_memo]);
+        // return ($mark_memo);
+    }
+
+    public function edit(){
+        return view('study.edit');
     }
 }
