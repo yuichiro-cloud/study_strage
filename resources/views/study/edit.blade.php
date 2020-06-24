@@ -34,7 +34,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleFormControlInput1">KeyWord</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="laravel training" name='keyword'>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" value={{$study->keyword}} name='keyword'>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Language select</label>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Memo Area</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='memo'></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='memo'>{{$study->memo}}</textarea>
                     </div>
                     <input style="display:block; margin:0 auto;" type="submit" value="put" />
                 </form>
