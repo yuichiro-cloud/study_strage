@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -4533,7 +4533,7 @@ hljs.registerLanguage("kotlin", function () {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!**********************************************!*\
   !*** multi ./resources/js/highlight.pack.js ***!
   \**********************************************/
@@ -4546,4 +4546,3 @@ module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/study_strage/
 /***/ })
 
 /******/ });
-hljs.initHighlightingOnLoad() ;

@@ -93,9 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus');
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/macdonalds/laravel/study_strage/resources/js/index.js'");
 
 /***/ }),
 

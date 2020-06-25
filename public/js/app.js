@@ -37218,6 +37218,40 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Chart.js":
+/*!*******************************!*\
+  !*** ./resources/js/Chart.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function () {
+  'use strict';
+
+  var type = 'line';
+  var data = {
+    labels: ['ruby', 'php', 'python', 'mysql', 'css'],
+    datasets: [{
+      backgroundColor: ["#BB5179", "#FAFF67", "#58A27C", "#3C00FF", "#3B02FF"],
+      label: 'type A',
+      data: [111, 222, 333, 444, 555]
+    } // , {
+    //     label: 'type B',
+    //     data: [1,2,3,4,5]
+    // }
+    ]
+  };
+  var options;
+  var ctx = $('#chart')[0].getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options: options
+  });
+})();
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -37226,6 +37260,8 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+__webpack_require__(/*! ./Chart */ "./resources/js/Chart.js");
 
 /***/ }),
 
