@@ -7,6 +7,7 @@ use App\Study;
 use App\Language;
 use App\StudyLanguage;
 use cebe\markdown\Markdown as Markdown;
+use Illuminate\Support\Facades\Auth;
 
 class StudyController extends Controller
 {
@@ -21,10 +22,12 @@ class StudyController extends Controller
         $array_h = array('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23');
         $array_m = array('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59');
         // $languages = StudyLanguage::where('')
-        
+        $user = Auth::user();
 
 
-        return view('study.create',['array_h'=>$array_h,'array_m'=>$array_m]);
+
+        return view('study.create',['array_h'=>$array_h,'array_m'=>$array_m,'user'=>$user]);
+        // return ($user->id);
     }
 
     public function store(Request $request){
@@ -34,9 +37,10 @@ class StudyController extends Controller
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
         $study->memo = $request->memo;
+        $study->user_id = $request->user_id;
         $study->save();
         return redirect('/');
-        // return ($study);
+        // return ($request);
 
     }
 

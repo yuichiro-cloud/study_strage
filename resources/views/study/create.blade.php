@@ -30,6 +30,7 @@
             <div class="main">
                 <form name="form1" action="/store" method='post'>
                     @csrf
+                    <input type='hidden' name='user_id' value="{{$user->id}}"><br>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">KeyWord</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="laravel training" name='keyword'>
@@ -37,7 +38,7 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Language select</label>
                         <select class="form-control" id="exampleFormControlSelect1" name='language'>
-                            <option></option>
+                            <option>1</option>
                         </select>
                     </div>
                     <div class="form-group">

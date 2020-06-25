@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('study/index');
 });
+Auth::routes();
 
-// Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth']], function(){
     Route::get('/', 'StudyController@index')->name('study.index');
     Route::get('/create', 'StudyController@create')->name('study.create');
     Route::post('/store', 'StudyController@store')->name('study.store');
@@ -26,8 +27,7 @@ Route::get('/', function () {
     Route::delete('study/{id}', 'StudyController@delete')->name('study.delete');
     Route::get('/study/{id}', 'StudyController@show')->name('study.show');
 
-//   });
+  });
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
