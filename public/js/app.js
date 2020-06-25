@@ -37218,40 +37218,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/Chart.js":
-/*!*******************************!*\
-  !*** ./resources/js/Chart.js ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function () {
-  'use strict';
-
-  var type = 'line';
-  var data = {
-    labels: ['ruby', 'php', 'python', 'mysql', 'css'],
-    datasets: [{
-      backgroundColor: ["#BB5179", "#FAFF67", "#58A27C", "#3C00FF", "#3B02FF"],
-      label: 'type A',
-      data: [111, 222, 333, 444, 555]
-    } // , {
-    //     label: 'type B',
-    //     data: [1,2,3,4,5]
-    // }
-    ]
-  };
-  var options;
-  var ctx = $('#chart')[0].getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'pie',
-    data: data,
-    options: options
-  });
-})();
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -37259,9 +37225,34 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./Chart */ "./resources/js/Chart.js");
+window.Vue = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+
+Vue.component('example-component', __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module './components/ExampleComponent.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))["default"]);
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+var app = new Vue({
+  el: '#app'
+});
 
 /***/ }),
 
@@ -37317,7 +37308,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Can't find stylesheet to import.\n  ╷\n8 │ @import '~bootstrap/scss/bootstrap';\n  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  ╵\n  /Users/macdonalds/laravel/study_strage/resources/sass/app.scss 8:9  root stylesheet\n    at /Users/macdonalds/laravel/study_strage/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Users/macdonalds/laravel/study_strage/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/macdonalds/laravel/study_strage/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/macdonalds/laravel/study_strage/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at /Users/macdonalds/laravel/study_strage/node_modules/sass-loader/dist/index.js:73:7\n    at Function.call$2 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:88459:16)\n    at _render_closure1.call$2 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:77851:12)\n    at _RootZone.runBinary$3$3 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:26320:18)\n    at _RootZone.runBinary$3 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:26324:19)\n    at _FutureListener.handleError$1 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24768:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:25065:40)\n    at Object._Future__propagateToListeners (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:4311:88)\n    at _Future._completeError$2 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24893:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24285:12)\n    at Object._asyncRethrow (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:4065:17)\n    at /Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:14183:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:4090:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24306:12)\n    at _awaitOnObject_closure0.call$2 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24298:25)\n    at _RootZone.runBinary$3$3 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:26320:18)\n    at _RootZone.runBinary$3 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:26324:19)\n    at _FutureListener.handleError$1 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24768:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:25065:40)\n    at Object._Future__propagateToListeners (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:4311:88)\n    at _Future._completeError$2 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24893:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24285:12)\n    at Object._asyncRethrow (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:4065:17)\n    at /Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:16818:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:4090:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24306:12)\n    at _awaitOnObject_closure0.call$2 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24298:25)\n    at _RootZone.runBinary$3$3 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:26320:18)\n    at _RootZone.runBinary$3 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:26324:19)\n    at _FutureListener.handleError$1 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:24768:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:25065:40)\n    at Object._Future__propagateToListeners (/Users/macdonalds/laravel/study_strage/node_modules/sass/sass.dart.js:4311:88)");
 
 /***/ }),
 
