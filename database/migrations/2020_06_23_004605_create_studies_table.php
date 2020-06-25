@@ -20,7 +20,6 @@ class CreateStudiesTable extends Migration
             $table->string('time_end');
             $table->text('memo');
             $table->string('keyword');
-            $table->string('language');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             // $table->string('code_check');

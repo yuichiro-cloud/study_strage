@@ -23,22 +23,24 @@ class StudyController extends Controller
         $array_m = array('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59');
         // $languages = StudyLanguage::where('')
         $user = Auth::user();
+        $languages = $user->languages;
 
 
 
-        return view('study.create',['array_h'=>$array_h,'array_m'=>$array_m,'user'=>$user]);
-        // return ($user->id);
+        return view('study.create',['array_h'=>$array_h,'array_m'=>$array_m,'user'=>$user,'languages'=>$languages]);
+        // return ($languages);
     }
 
     public function store(Request $request){
         $study = new Study;
+
         $study->keyword = $request->keyword;
-        $study->language = $request->language;
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
         $study->memo = $request->memo;
         $study->user_id = $request->user_id;
         $study->save();
+        $study->languages()->attach($request->language_id,['study_id'=>$study->id,'created_at'=>$request->created_at,'updated_at'=>$request->updated_at]);
         return redirect('/');
         // return ($request);
 
@@ -46,6 +48,7 @@ class StudyController extends Controller
 
     public function show($id){
         $study = Study::find($id);
+        $languages = $study->languages;
         $time_start = $study->time_start;
         $time_start_minutes = (int)substr($time_start,0,2)*60 + (int)substr($time_start,2,4);
         $time_end = $study->time_end;
@@ -60,7 +63,7 @@ class StudyController extends Controller
             $time_minute = $time_dif%60;
         }
 
-        return view('study.show',['study'=>$study,'time_hour'=>$time_hour,'time_minute'=>$time_minute]);
+        return view('study.show',['study'=>$study,'time_hour'=>$time_hour,'time_minute'=>$time_minute,'languages'=>$languages]);
         // return ($mark_memo);
     }
 
