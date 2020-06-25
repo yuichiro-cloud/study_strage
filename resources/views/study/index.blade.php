@@ -41,9 +41,9 @@
                 <canvas id="chart"></canvas>
                 <div id="app">
 
-</div>
-</div>
-</div>
+                </div>
+                </div>
+                </div>
         </div>
     </body>
     </html>
