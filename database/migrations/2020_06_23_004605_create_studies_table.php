@@ -21,6 +21,7 @@ class CreateStudiesTable extends Migration
             $table->string('time_end');
             $table->text('memo');
             $table->string('keyword');
+            // $table->string('code_check');
             $table->timestamps();
         });
     }

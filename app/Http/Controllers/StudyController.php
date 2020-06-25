@@ -28,9 +28,18 @@ class StudyController extends Controller
         $study->language = $request->language;
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
+        // $study->memo = $request->memo;
+        // if($request->code_check == '1'){
+        // $study->memo = "<pre><code>{$request->memo}</code></pre>";
         $study->memo = $request->memo;
+        // }else{
+        //     $study->memo = "<pre>{$request->memo}</pre>";
+        // }
+        // $study->memo = "<pre>{$request->memo}</pre>";
+        // $study->code_check = $request->code_check;
         $study->save();
         return redirect('/');
+        // return ($request);
 
     }
 
@@ -68,7 +77,6 @@ class StudyController extends Controller
         $end_h = substr($time_end,0,2);
         $end_m = substr($time_end,2,4);
 
-
         $array_h = array('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23');
         $array_m = array('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59');
 
@@ -84,7 +92,14 @@ class StudyController extends Controller
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
         $study->memo = $request->memo;
+        // if($request->code_check == 1){
+        //     $study->memo = "<pre><code>{$request->memo}</code></pre>";
+        // }else{
+        //     $study->memo = "<pre>{$request->memo}</pre>";
+        // }
+        // $study->code_check = $request->code_check;
         $study->save();
         return redirect('/');
+        // return ($request);
     }
 }

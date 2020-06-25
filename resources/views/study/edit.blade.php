@@ -109,7 +109,9 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Memo Area</label>
-                        <span class="code-button">code</span>
+                        <!-- <span class="code-button">code</span> -->
+                        <!-- <input style="display:none;" type="checkbox"  name="code-check" value="red" > -->
+                        <!-- <input type="checkbox" class="code_check" name="code_check" value={{$study->code_check}}> -->
                         <textarea class="form-control memo-area" id="exampleFormControlTextarea1" rows="20" name='memo'>{{$study->memo}}</textarea>
                     </div>
                     <input style="display:block; margin:0 auto;" type="submit" value="put" />

@@ -28,7 +28,7 @@
                     </ul>
             </header>
             <div class="main">
-                <form action="/store" method='post'>
+                <form name="form1" action="/store" method='post'>
                     @csrf
                     <div class="form-group">
                         <label for="exampleFormControlInput1">KeyWord</label>
@@ -90,7 +90,8 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Memo Area</label>
-                        <span>code</span>
+                        <!-- <span class="code-button">code</span> -->
+                        <!-- <input type="checkbox" class="code_check" name="code_check" value='0'> -->
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='memo'></textarea>
                     </div>
                     <input style="display:block; margin:0 auto;" type="submit" value="post" />
