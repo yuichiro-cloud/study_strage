@@ -39,7 +39,7 @@
                     </li>
                 </ul>
                 <div class="content">
-                    {!! $mark_memo !!}
+                    {!! nl2br(e($study->memo)) !!}
                 </div>
 
 

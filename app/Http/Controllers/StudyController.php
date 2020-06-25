@@ -32,6 +32,8 @@ class StudyController extends Controller
         // if($request->code_check == '1'){
         // $study->memo = "<pre><code>{$request->memo}</code></pre>";
         $study->memo = $request->memo;
+
+        // $study->memo = nl2br($request->memo);
         // }else{
         //     $study->memo = "<pre>{$request->memo}</pre>";
         // }
@@ -39,7 +41,7 @@ class StudyController extends Controller
         // $study->code_check = $request->code_check;
         $study->save();
         return redirect('/');
-        // return ($request);
+        // return ($study);
 
     }
 
@@ -58,13 +60,14 @@ class StudyController extends Controller
             $time_hour = intdiv($time_dif,60);
             $time_minute = $time_dif%60;
         }
+        // $memo_br = nl2br($study->memo);
 
         // $parser = new Markdown();
         // $mark_memo = $parser->parse($study->memo);
 
-        $mark_memo = $study->memo;
+        // $mark_memo = $study->memo;
 
-        return view('study.show',['study'=>$study,'time_hour'=>$time_hour,'time_minute'=>$time_minute,'mark_memo'=>$mark_memo]);
+        return view('study.show',['study'=>$study,'time_hour'=>$time_hour,'time_minute'=>$time_minute]);
         // return ($mark_memo);
     }
 
@@ -92,6 +95,7 @@ class StudyController extends Controller
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
         $study->memo = $request->memo;
+        // $study->memo = nl2br($request->memo);
         // if($request->code_check == 1){
         //     $study->memo = "<pre><code>{$request->memo}</code></pre>";
         // }else{
