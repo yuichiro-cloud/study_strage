@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Study;
-
+use App\Language;
 use cebe\markdown\Markdown as Markdown;
 
 class StudyController extends Controller
@@ -19,6 +19,9 @@ class StudyController extends Controller
     public function create(Request $request){
         $array_h = array('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23');
         $array_m = array('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59');
+        $languages = Language::
+
+
         return view('study.create',['array_h'=>$array_h,'array_m'=>$array_m]);
     }
 
@@ -28,17 +31,7 @@ class StudyController extends Controller
         $study->language = $request->language;
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
-        // $study->memo = $request->memo;
-        // if($request->code_check == '1'){
-        // $study->memo = "<pre><code>{$request->memo}</code></pre>";
         $study->memo = $request->memo;
-
-        // $study->memo = nl2br($request->memo);
-        // }else{
-        //     $study->memo = "<pre>{$request->memo}</pre>";
-        // }
-        // $study->memo = "<pre>{$request->memo}</pre>";
-        // $study->code_check = $request->code_check;
         $study->save();
         return redirect('/');
         // return ($study);
@@ -60,12 +53,6 @@ class StudyController extends Controller
             $time_hour = intdiv($time_dif,60);
             $time_minute = $time_dif%60;
         }
-        // $memo_br = nl2br($study->memo);
-
-        // $parser = new Markdown();
-        // $mark_memo = $parser->parse($study->memo);
-
-        // $mark_memo = $study->memo;
 
         return view('study.show',['study'=>$study,'time_hour'=>$time_hour,'time_minute'=>$time_minute]);
         // return ($mark_memo);
@@ -95,13 +82,6 @@ class StudyController extends Controller
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
         $study->memo = $request->memo;
-        // $study->memo = nl2br($request->memo);
-        // if($request->code_check == 1){
-        //     $study->memo = "<pre><code>{$request->memo}</code></pre>";
-        // }else{
-        //     $study->memo = "<pre>{$request->memo}</pre>";
-        // }
-        // $study->code_check = $request->code_check;
         $study->save();
         return redirect('/');
         // return ($request);

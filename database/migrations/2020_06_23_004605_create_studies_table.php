@@ -16,11 +16,12 @@ class CreateStudiesTable extends Migration
         Schema::create('studies', function (Blueprint $table) {
             $table->id();
             // $table->string('name');
-            $table->string('language');
             $table->string('time_start');
             $table->string('time_end');
             $table->text('memo');
             $table->string('keyword');
+            // $table->foreign('language_id')->references('id')->on('languages');
+            // $table->string('language');
             // $table->string('code_check');
             $table->timestamps();
         });

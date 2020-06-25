@@ -37,12 +37,19 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Language select</label>
                         <select class="form-control" id="exampleFormControlSelect1" name='language'>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                            <option></option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInput">Name</label>
+                            <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="if Lan not in select">
+                            </div>
+                            <div class="col-auto">
+                            <button type="button" class="btn btn-primary mb-2">Add</button>
+                            </div>
+                        </div>
                     </div>
                     <h5>Study Start</h5>
                     <div class="form-row">
