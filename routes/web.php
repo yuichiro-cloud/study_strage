@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::delete('study/{id}', 'StudyController@delete')->name('study.delete');
     Route::get('/study/{id}', 'StudyController@show')->name('study.show');
     Route::get('/getStudy','StudyController@getStudy')->name('study.getStudy');
+    Route::post('/lanStore','StudyController@lanStore')->name('study.lanStore');
 
   });
 

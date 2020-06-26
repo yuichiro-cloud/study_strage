@@ -46,5 +46,22 @@ $(function(){
             $(".language-select").append(`<option>${lan_input}</option>`)
             alert(`${lan_input}を言語に追加しました`)
         }
+        $.ajaxSetup({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+        });
+
+        $.ajax({
+            type:'POST',
+            url:'/lanStore',
+            data:{'language':lan_input},
+            // dataType:'json',
+        })
+        .done(function(response){
+            console.log(response);
+        })
+        .fail(function(response){
+            console.log('fail');
+        })
     })
 });
+

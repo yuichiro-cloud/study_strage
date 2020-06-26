@@ -139,6 +139,24 @@ $(function () {
       $(".language-select").append("<option>".concat(lan_input, "</option>"));
       alert("".concat(lan_input, "\u3092\u8A00\u8A9E\u306B\u8FFD\u52A0\u3057\u307E\u3057\u305F"));
     }
+
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    $.ajax({
+      type: 'POST',
+      url: '/lanStore',
+      data: {
+        'language': lan_input
+      } // dataType:'json',
+
+    }).done(function (response) {
+      console.log(response);
+    }).fail(function (response) {
+      console.log('fail');
+    });
   });
 });
 

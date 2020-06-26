@@ -38,6 +38,23 @@ class StudyController extends Controller
         $study->keyword = $request->keyword;
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
+
+
+        $time_start = $request->study__start;
+        $time_start_minutes = (int)substr($time_start,0,2)*60 + (int)substr($time_start,2,4);
+        $time_end = $request->study_end;
+        $time_end_minutes = (int)substr($time_end,0,2)*60 + (int)substr($time_end,2,4);
+        $time_dif = $time_end_minutes - $time_start_minutes;
+        if($time_dif>=0){
+            $study->minutes = $time_dif;
+        }else{
+            $study->minutes = $time_dif+1440;
+        }
+
+
+
+
+
         $study->memo = $request->memo;
         $study->language_id = Language::where('name',$request->language)->first()->id;
         $study->user_id = $request->user_id;
@@ -108,6 +125,15 @@ class StudyController extends Controller
         return ([$user,$studies]);
         // return ([$studies]);
         // return ($studies);
+    }
 
+    public function lanStore(Request $request){
+        $user = Auth::user();
+        $language = new Language;
+        $language->name = $request->language;
+        $language->user_id = $user->id;
+        $language->save();
+        return (200);
+        // return ($request);
     }
 }

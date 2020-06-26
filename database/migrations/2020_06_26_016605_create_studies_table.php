@@ -18,6 +18,7 @@ class CreateStudiesTable extends Migration
             // $table->string('name');
             $table->string('time_start');
             $table->string('time_end');
+            $table->integer('minutes');
             $table->text('memo');
             $table->string('keyword');
             $table->unsignedBigInteger('language_id');

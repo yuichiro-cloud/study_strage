@@ -6,6 +6,7 @@
         <script src="{{ asset('js/time_variable.js') }}" defer></script>
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/create.css') }}" rel="stylesheet">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
         <div class="container">
@@ -37,7 +38,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Language select</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name='language'>
+                        <select class="form-control language-select" id="exampleFormControlSelect1" name='language'>
                             @foreach($languages as $language)
                                 <option>{{$language->name}}</option>
                             @endforeach
@@ -45,12 +46,12 @@
                     </div>
                     <div class="form-group">
                         <div class="form-row align-items-center">
-                            <div class="col-auto">
+                            <div class="col-auto" id="lan-input-form">
                             <label class="sr-only" for="inlineFormInput">Name</label>
-                            <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="if Lan not in select">
+                            <input type="text" class="form-control mb-2 add-lan" id="inlineFormInput" placeholder="if Lan not in select">
                             </div>
                             <div class="col-auto">
-                            <button type="button" class="btn btn-primary mb-2">Add</button>
+                            <button id="add-btn" type="button" class="btn btn-primary mb-2">Add</button>
                             </div>
                         </div>
                     </div>
