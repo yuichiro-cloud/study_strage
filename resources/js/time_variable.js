@@ -51,7 +51,7 @@ $(function(){
         $.ajax({
             type:'POST',
             url:'/lanStore',
-            data:{'language':l_lan},
+            data:{'language':lan_input,'lower_language':l_lan},
             // dataType:'json',
         })
         .done(function(response){

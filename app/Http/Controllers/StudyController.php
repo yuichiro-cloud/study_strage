@@ -132,17 +132,17 @@ class StudyController extends Controller
         $languages = $user->languages;
         $response = 'new';
         foreach($languages as $lan){
-            if($lan->name === $request->language){
+            if($lan->lower_name === $request->lower_language){
                 $response = 'exits';
             }
         }
 
-        $db_checker = Language::get(['name']);
         if($response === 'exits'){
             $response = 'already exits';
         }else{
             $language = new Language;
             $language->name = $request->language;
+            $language->lower_name = $request->lower_language;
             $language->user_id = $user->id;
             $language->save();
             $response = 'add language';
