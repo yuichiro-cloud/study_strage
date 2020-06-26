@@ -37,9 +37,9 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Language select</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name='language_id'>
+                        <select class="form-control" id="exampleFormControlSelect1" name='language'>
                             @foreach($languages as $language)
-                                <option value={{$language->id}}>{{$language->name}}</option>
+                                <option>{{$language->name}}</option>
                             @endforeach
                         </select>
                     </div>

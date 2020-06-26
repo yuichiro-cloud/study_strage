@@ -10,4 +10,9 @@ class Language extends Model
     {
         return $this->belongsToMany('App\Study');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User','foreign_key');
+    }
 }

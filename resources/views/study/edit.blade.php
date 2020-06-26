@@ -34,17 +34,26 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleFormControlInput1">KeyWord</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" value={{$study->keyword}} name='keyword'>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" value="{{$study->keyword}}" name="keyword">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Language select</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name='language'>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <select class="form-control language-select" id="exampleFormControlSelect1" name='language'>
+                            @foreach($languages as $language)
+                                <option>{{$language->name}}</option>
+                            @endforeach
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row align-items-center">
+                            <div class="col-auto" id="lan-input-form">
+                            <label class="sr-only" for="inlineFormInput">Name</label>
+                            <input type="text" class="form-control mb-2 add-lan" id="inlineFormInput" placeholder="新規言語を入力">
+                            </div>
+                            <div class="col-auto">
+                            <button id="add-btn" type="button" class="btn btn-primary mb-2">Add</button>
+                            </div>
+                        </div>
                     </div>
 
                     <h5>Study Start</h5>

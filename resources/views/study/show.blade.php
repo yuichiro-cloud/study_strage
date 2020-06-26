@@ -32,17 +32,13 @@
             <div class="main">
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <span class="nav-link">Language:
-                            @foreach($languages as $language)
-                                {{$language->name}}
-                            @endforeach
-                        </span>
+                        <span class="nav-link">Language:{{$language->name}}</span>
                     </li>
                     <li class="nav-item">
                         <span class="nav-link">Time:{{$time_hour}}時間{{$time_minute}}分</span>
                     </li>
                 </ul>
-                <div class="content">
+                <div style="background-color:#EEEEEE;" class="content">
                     {!! nl2br(e($study->memo)) !!}
                 </div>
 
