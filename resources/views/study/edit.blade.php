@@ -7,6 +7,7 @@
         <script src="{{ asset('js/time_variable.js') }}" defer></script>
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/create.css') }}" rel="stylesheet">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
         <div class="container">
@@ -41,7 +42,13 @@
                         <label for="exampleFormControlSelect1">Language select</label>
                         <select class="form-control language-select" id="exampleFormControlSelect1" name='language'>
                             @foreach($languages as $language)
-                                <option>{{$language->name}}</option>
+                                @if($language->id === $study->language_id){
+                                    <option selected>{{$language->name}}</option>
+                                }
+                                @else{
+                                    <option>{{$language->name}}</option>
+                                }
+                                @endif
                             @endforeach
                         </select>
                     </div>

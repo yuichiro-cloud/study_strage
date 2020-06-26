@@ -1,4 +1,20 @@
 
+window.onload = function(){
+    $.ajax({
+        type:'GET',
+        url:'/getStudy',
+
+    })
+    .done(function(data){
+        // console.log(data);
+        const user = data[0];
+        const studies = data[1];
+        const languages = data[2];
+        console.log(user)
+        console.log(studies)
+        console.log(languages)
+    })
+}
 (function() {
     'use strict';
     var type = 'line';

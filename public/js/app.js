@@ -49676,7 +49676,20 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function () {
+window.onload = function () {
+  $.ajax({
+    type: 'GET',
+    url: '/getStudy'
+  }).done(function (data) {
+    // console.log(data);
+    var user = data[0];
+    var studies = data[1];
+    var languages = data[2];
+    console.log(user);
+    console.log(studies);
+    console.log(languages);
+  });
+}(function () {
   'use strict';
 
   var type = 'line';

@@ -110,9 +110,19 @@ class StudyController extends Controller
     public function getStudy(){
         $user = Auth::user();
         $studies = $user->studies;
-        return ([$user,$studies]);
-        // return ([$studies]);
-        // return ($studies);
+        $languages = $user->languages;
+        $l = array();
+        foreach($languages as $lan){
+            $sum_minutes = 0;
+            foreach($studies as $study){
+                if($lan->id === $study->language_id){
+                    $sum_minutes += $study->minutes;
+                }
+            }
+            array_push($l,array($lan->lower_name=>$sum_minutes));
+
+        }
+        return ([$user,$studies,$l]);
     }
 
     public function lanStore(Request $request){
