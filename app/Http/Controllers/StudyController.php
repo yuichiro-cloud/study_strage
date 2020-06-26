@@ -87,11 +87,12 @@ class StudyController extends Controller
     }
 
     public function update(Request $request,$id){
-        $lan = $request->language;
-    //    $data =  Language::where('name','ruby');
-    // $data = Language::all();
-
+        $lan = new Language;
+        $lan->name = $request->language;
+        $lan->user_id = $request->user_id;
+        $lan->save();
         $study = Study::find($id);
+        $languages =
         $study->keyword = $request->keyword;
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
@@ -99,6 +100,5 @@ class StudyController extends Controller
         $study->language_id = Language::where('name',$request->language)->first()->id;
         $study->save();
         return redirect('/');
-        return ($data);
     }
 }

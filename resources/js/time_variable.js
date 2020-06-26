@@ -46,6 +46,5 @@ $(function(){
             $(".language-select").append(`<option>${lan_input}</option>`)
             alert(`${lan_input}を言語に追加しました`)
         }
-
     })
 });

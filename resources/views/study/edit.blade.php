@@ -32,6 +32,7 @@
                 <form name="form1" action="/study/{{$study->id}}/update" method='post'>
                     @method('PUT')
                     @csrf
+                    <input type="hidden" name="user_id" value="{{$study->user_id}}">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">KeyWord</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" value="{{$study->keyword}}" name="keyword">
