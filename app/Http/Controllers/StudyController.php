@@ -58,11 +58,7 @@ class StudyController extends Controller
     public function show($id){
         $study = Study::find($id);
         $language = Language::find($study->language_id);
-        $time_start = $study->time_start;
-        $time_start_minutes = (int)substr($time_start,0,2)*60 + (int)substr($time_start,2,4);
-        $time_end = $study->time_end;
-        $time_end_minutes = (int)substr($time_end,0,2)*60 + (int)substr($time_end,2,4);
-        $time_dif = $time_end_minutes - $time_start_minutes;
+        $time_dif = $study->minutes;
         if($time_dif>=0){
             $time_hour = intdiv($time_dif,60);
             $time_minute = $time_dif%60;
@@ -73,7 +69,6 @@ class StudyController extends Controller
         }
 
         return view('study.show',['study'=>$study,'time_hour'=>$time_hour,'time_minute'=>$time_minute,'language'=>$language]);
-        // return ($language);
     }
 
     public function edit(Request $request){
@@ -94,15 +89,18 @@ class StudyController extends Controller
     }
 
     public function update(Request $request,$id){
-        $lan = new Language;
-        $lan->name = $request->language;
-        $lan->user_id = $request->user_id;
-        $lan->save();
         $study = Study::find($id);
-        $languages =
         $study->keyword = $request->keyword;
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
+        $time_start_minutes = (int)substr($request->study_start,0,2)*60 + (int)substr($request->study_start,2,4);
+        $time_end_minutes = (int)substr($request->study_end,0,2)*60 + (int)substr($request->study_end,2,4);
+        $time_dif = $time_end_minutes - $time_start_minutes;
+        if($time_dif>=0){
+            $study->minutes = $time_dif;
+        }else{
+            $study->minutes = $time_dif+1440;
+        }
         $study->memo = $request->memo;
         $study->language_id = Language::where('name',$request->language)->first()->id;
         $study->save();
