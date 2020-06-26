@@ -3,6 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/js/bootstrap.js": "/js/bootstrap.js",
     "/js/edit.js": "/js/edit.js",
+    "/js/get_study.js": "/js/get_study.js",
     "/js/highlight.pack.js": "/js/highlight.pack.js",
     "/js/time_variable.js": "/js/time_variable.js"
 }

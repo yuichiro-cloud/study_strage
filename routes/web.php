@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::put('/study/{id}/update', 'StudyController@update')->name('study.update');
     Route::delete('study/{id}', 'StudyController@delete')->name('study.delete');
     Route::get('/study/{id}', 'StudyController@show')->name('study.show');
+    Route::get('/getStudy','StudyController@getStudy')->name('study.getStudy');
 
   });
 

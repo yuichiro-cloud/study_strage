@@ -43,6 +43,6 @@ class User extends Authenticatable
 
     public function studies()
     {
-        return $this->belongsToMany('App\Study');
+        return $this->hasMany('App\Study');
     }
 }

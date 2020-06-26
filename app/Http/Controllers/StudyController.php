@@ -101,4 +101,13 @@ class StudyController extends Controller
         $study->save();
         return redirect('/');
     }
+
+    public function getStudy(){
+        $user = Auth::user();
+        $studies = $user->studies;
+        return ([$user,$studies]);
+        // return ([$studies]);
+        // return ($studies);
+
+    }
 }

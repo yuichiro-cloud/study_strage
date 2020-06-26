@@ -6,6 +6,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/index.css') }}" rel="stylesheet">
+        <script src="{{ asset('js/get_study.js') }}" defer></script>
         <!-- <script src="Chart.js/dist/Chart.js"></script> -->
         <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
     </head>
