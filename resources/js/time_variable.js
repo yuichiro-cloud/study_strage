@@ -42,22 +42,25 @@ $(function(){
         $("#lan-input-form").append(`<input type="text" class="form-control mb-2 add-lan" id="inlineFormInput" placeholder="新規言語を入力">`)
         if(lan_input == ""){
             alert('value is null')
-        }else{
-            $(".language-select").append(`<option>${lan_input}</option>`)
-            alert(`${lan_input}を言語に追加しました`)
         }
         $.ajaxSetup({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
         });
-
+        const l_lan = lan_input.toLocaleLowerCase();
+        // console.log(l_lan)
         $.ajax({
             type:'POST',
             url:'/lanStore',
-            data:{'language':lan_input},
+            data:{'language':l_lan},
             // dataType:'json',
         })
         .done(function(response){
-            console.log(response);
+            if(response == 'already exits'){
+                alert(`${lan_input}は言語に存在しています`)
+            }else{
+                $(".language-select").append(`<option>${lan_input}</option>`)
+                alert(`${lan_input}を言語に追加しました`)
+            }
         })
         .fail(function(response){
             console.log('fail');

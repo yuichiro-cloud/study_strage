@@ -129,11 +129,24 @@ class StudyController extends Controller
 
     public function lanStore(Request $request){
         $user = Auth::user();
-        $language = new Language;
-        $language->name = $request->language;
-        $language->user_id = $user->id;
-        $language->save();
-        return (200);
-        // return ($request);
+        $languages = $user->languages;
+        $response = 'new';
+        foreach($languages as $lan){
+            if($lan->name === $request->language){
+                $response = 'exits';
+            }
+        }
+
+        $db_checker = Language::get(['name']);
+        if($response === 'exits'){
+            $response = 'already exits';
+        }else{
+            $language = new Language;
+            $language->name = $request->language;
+            $language->user_id = $user->id;
+            $language->save();
+            $response = 'add language';
+        }
+        return ($response);
     }
 }
