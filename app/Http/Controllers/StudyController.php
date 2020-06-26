@@ -39,29 +39,19 @@ class StudyController extends Controller
         $study->time_start = $request->study_start;
         $study->time_end = $request->study_end;
 
-
-        $time_start = $request->study__start;
-        $time_start_minutes = (int)substr($time_start,0,2)*60 + (int)substr($time_start,2,4);
-        $time_end = $request->study_end;
-        $time_end_minutes = (int)substr($time_end,0,2)*60 + (int)substr($time_end,2,4);
+        $time_start_minutes = (int)substr($request->study_start,0,2)*60 + (int)substr($request->study_start,2,4);
+        $time_end_minutes = (int)substr($request->study_end,0,2)*60 + (int)substr($request->study_end,2,4);
         $time_dif = $time_end_minutes - $time_start_minutes;
         if($time_dif>=0){
             $study->minutes = $time_dif;
         }else{
             $study->minutes = $time_dif+1440;
         }
-
-
-
-
-
         $study->memo = $request->memo;
         $study->language_id = Language::where('name',$request->language)->first()->id;
         $study->user_id = $request->user_id;
         $study->save();
-        // $study->languages()->attach($request->language_id,['study_id'=>$study->id,'created_at'=>$request->created_at,'updated_at'=>$request->updated_at]);
         return redirect('/');
-        // return (Language::where('name','ruby')->first());
 
     }
 
