@@ -26,10 +26,11 @@ function graph(lavels,values) {
         data: data,
         options: options
     });
-    return (options,ctx,myChart);
+    return (myChart);
 };
 
-window.onload = function(){
+
+$(function(){
     $.ajax({
         type:'GET',
         url:'/getStudy',
@@ -37,13 +38,14 @@ window.onload = function(){
     })
     .done(function(response){
         const minutes = response;
-        const lavel_lan = minutes.map(minute=>minute[0]+'min');
+        const lavel_lan = minutes.map(minute=>minute[0]);
         const value_lan = minutes.map(minute=>minute[1])
         console.log(lavel_lan);
         console.log(value_lan);
         graph(lavel_lan,value_lan);
-    })
-}
+    });
+});
+
 
 
 

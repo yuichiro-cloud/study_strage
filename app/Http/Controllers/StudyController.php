@@ -119,7 +119,7 @@ class StudyController extends Controller
                     $sum_minutes += $study->minutes;
                 }
             }
-            array_push($l,array($lan->lower_name,$sum_minutes));
+            array_push($l,array($lan->name,$sum_minutes));
 
         }
         return ($l);
@@ -146,5 +146,11 @@ class StudyController extends Controller
             $response = 'add language';
         }
         return ($response);
+    }
+
+    public function delete(Request $request){
+        $study = Study::destroy($request->id);
+        return ('200');
+        // return redirect('/');
     }
 }

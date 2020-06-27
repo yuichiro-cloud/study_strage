@@ -49696,19 +49696,18 @@ function graph(lavels, values) {
     data: data,
     options: options
   });
-  return options, ctx, myChart;
+  return myChart;
 }
 
 ;
-
-window.onload = function () {
+$(function () {
   $.ajax({
     type: 'GET',
     url: '/getStudy'
   }).done(function (response) {
     var minutes = response;
     var lavel_lan = minutes.map(function (minute) {
-      return minute[0] + 'min';
+      return minute[0];
     });
     var value_lan = minutes.map(function (minute) {
       return minute[1];
@@ -49717,7 +49716,7 @@ window.onload = function () {
     console.log(value_lan);
     graph(lavel_lan, value_lan);
   });
-}; // (function() {
+}); // (function() {
 //     'use strict';
 //     var type = 'line';
 //     var data = {

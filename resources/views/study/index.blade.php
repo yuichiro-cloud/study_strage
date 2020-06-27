@@ -24,8 +24,11 @@
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Graph</a>
-                            <a class="dropdown-item" href="#">Edit</a>
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <a class="dropdown-item" href="http://localhost:8000/logout" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();" class="dropdown-menu">
+                                Logout</a>
+                            <form id="logout-form" action="http://localhost:8000/logout" method="POST" style="display: none;"><input type="hidden" name="_token" value="u7eCYSh2WT3bQiJZ1ai0zbahSqYKbHRR2MB10BVM"></form>
+                            <!-- <a class="dropdown-item" href="#">Logout</a> -->
                             </div>
                         </li>
                     </ul>
