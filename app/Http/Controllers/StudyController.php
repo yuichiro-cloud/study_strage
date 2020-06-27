@@ -119,10 +119,10 @@ class StudyController extends Controller
                     $sum_minutes += $study->minutes;
                 }
             }
-            array_push($l,array($lan->lower_name=>$sum_minutes));
+            array_push($l,array($lan->lower_name,$sum_minutes));
 
         }
-        return ([$user,$studies,$l]);
+        return ($l);
     }
 
     public function lanStore(Request $request){
