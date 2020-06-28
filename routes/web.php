@@ -28,8 +28,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/study/{id}', 'StudyController@show')->name('study.show');
     Route::get('/getStudy','StudyController@getStudy')->name('study.getStudy');
     Route::post('/lanStore','StudyController@lanStore')->name('study.lanStore');
-
   });
+// Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+// Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
