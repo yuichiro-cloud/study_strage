@@ -53,7 +53,7 @@
             <div class="main" id="main" data-index={{$study->id}}>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <span class="nav-link">Language:{{$language->name}}</span>
+                        <span class="nav-link" style="color:red;">Language:{{$language->name}}</span>
                     </li>
                     <li class="nav-item">
                         <span class="nav-link">Time:{{$time_hour}}時間{{$time_minute}}分</span>
