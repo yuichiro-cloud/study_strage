@@ -1,85 +1,37 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+#**STUDY_STRAGE**
+---
+### STUDY_STRAGEを使うと何ができるのか
+- 日々の学習時間の記録
+- 一度理解していたが忘れてしまった内容の検索に困らなくて済む
+- グラフなどを用いて日々の学習を視覚化できる
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+### STUDY_STRAGEを作った理由
+日々学習していて、一度しっかりと調べて自分なりに理解した内容を時間があいて再び使うとき、またドキュメントなどを読み自分なりの言葉で理解し直すということが煩わしく感じていたため、自分なりの言葉で詰まりやすいポイントを記録しておくと効率良く記憶を辿れるのではと思い今回実際に自分で使用する目的でSTUDY_STRAGEを作成しました。
 
-## About Laravel
+###使用技術
+####使用言語
+Laravel(PHP), JQuery(javascript), Bootstrap(CSS)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+####環境
+PHP(version 7.4.5),Laravel(version 7.16.1),Amazon Linux2, MySQL
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 今後実装予定の機能
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- SNS認証
+- SNSを用いた学習内容の共有
+- JQueryで書いているコードをReact.jsにする
+- SPAにしてUIをあげる
 
-## Learning Laravel
+##STUDY_STRAGEの使用方法
+1. 任意の方法でログインもしくはアカウントを新規作成してください
+- トップページ右上にある追加ボタンを押してください
+- *KeyWord*には学習した内容でポイントとなるワードを入れてください。学習した内容を検索する際には*KeyWord*を用います。
+- *Language Select*では学習した言語orカテゴリを選択できます。*Language Select*に希望するカテゴリがまだ存在していない場合一つ下のフォームに新規カテゴリを入力して*Add*を押すとカテゴリを追加できます。
+- *Study_Start*ではそれぞれ何時何分から学習を開始したか、*Study_End*ではそれぞれ何時何分に学習を終了したかを選択してください。（注意 : 一度の学習時間は最大で23時間59分までしか記録されません）
+- *Memo Area*では学習の中で難しかったこと、検索するのが大変だったことなどを、自分なりの言葉、検索の仕方などでまとめておきましょう！
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-
-### Community Sponsors
-
-<a href="https://op.gg"><img src="http://opgg-static.akamaized.net/icon/t.rectangle.png" width="150"></a>
-
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [云软科技](http://www.yunruan.ltd/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- 以上を入力し、一番下にあるpostボタンで投稿しましょう！
+- 投稿が完了すると、トップページにカテゴリ別の円グラフができ学習時間によって円グラフが変化します。
+- トップページの*Latest10*には最新の学習内容が10件表示されていて、それぞれクリックすると勉強時間、メモした内容、使用言語などが記載されている詳細ページに遷移することができます。
+- 詳細ページでは学習内容の確認以外に、右上の*menu*を押すことで誤った内容があった際に編集、削除をすることができます。
+（注意 : 編集、削除をすると、円グラフに影響が出ます。正しい情報を入力してください。）
