@@ -177,7 +177,7 @@ a.title-font {
 a.search-study {
     display: block;
     height: 32px;
-    margin: 3px;
+    margin: 0px 3px 3px 3px ;
 }
 a.search-study:hover{
     background-color: lightgray;
