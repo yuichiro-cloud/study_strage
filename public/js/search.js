@@ -81,30 +81,58 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/index.js":
-/*!*******************************!*\
-  !*** ./resources/js/index.js ***!
-  \*******************************/
+/***/ "./resources/js/search.js":
+/*!********************************!*\
+  !*** ./resources/js/search.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/macdonalds/laravel/study_strage/resources/js/index.js'");
+$(function () {
+  $('.search-input').keyup(function () {
+    if ($(".searched-box").children().length != 0) {
+      $(".searched-box").empty();
+    } // $(".searched-box").child.remove();
+
+
+    var input_text = $('.search-input').val();
+    $(function () {
+      $.ajax({
+        type: 'GET',
+        url: '/search',
+        data: {
+          'word': input_text
+        }
+      }).done(function (response) {
+        console.log(response);
+        var searched = response; // searched.each(function(index){
+        //     console.log(index);
+        // })
+
+        for (var i in searched) {
+          $(".searched-box").append("<a class=\"search-study\" href=\"/study/".concat(searched[i].id, "\">").concat(searched[i].keyword, "</a>"));
+        } // $(".search-box").append(`<a href="/study/1">aaaa</a>`)
+
+      });
+    });
+  });
+});
 
 /***/ }),
 
-/***/ 2:
-/*!*************************************!*\
-  !*** multi ./resources/js/index.js ***!
-  \*************************************/
+/***/ 7:
+/*!**************************************!*\
+  !*** multi ./resources/js/search.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/study_strage/resources/js/index.js */"./resources/js/index.js");
+module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/study_strage/resources/js/search.js */"./resources/js/search.js");
 
 
 /***/ })

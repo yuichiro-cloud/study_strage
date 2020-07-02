@@ -151,6 +151,23 @@ class StudyController extends Controller
     public function delete(Request $request){
         $study = Study::destroy($request->id);
         return ('200');
-        // return redirect('/');
+    }
+
+    public function search(Request $request){
+        $word = $request->word;
+        $studies = Auth::user()->studies;
+        $searched_studies = array();
+        foreach($studies as $study){
+            if(preg_match("/{$word}/",$study->keyword)){
+                array_push($searched_studies,$study);
+            }
+        }
+        if ($word === null){
+            $searched_studies = array();
+        }
+        // preg_match("/PHP/", "今PHPを勉強しています。"
+        // $studies = Study::where('keyword',"{$word}")->get();
+        // $studies = "SELECT * FROM studies WHERE id =  1";
+        return ($searched_studies);
     }
 }

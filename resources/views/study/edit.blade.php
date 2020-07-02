@@ -10,10 +10,10 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
-        <div class="container">
+        <div style="padding:30px;" class="container">
             <header>
-                <div class="nav">
-                    <h2>STUDY STRAGE</h1>
+                <div class="title" style="font-size: 30px;">
+                    <a class="title-font" href="/">STUDY STRAGE</a>
                 </div>
             </header>
             <div class="main">

@@ -7,14 +7,13 @@
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/index.css') }}" rel="stylesheet">
         <script src="{{ asset('js/get_study.js') }}" defer></script>
-        <!-- <script src="Chart.js/dist/Chart.js"></script> -->
-        <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+        <script src="{{ asset('js/search.js') }}" defer></script>
     </head>
     <body>
-        <div class="container">
+        <div style="padding:30px;" class="container">
             <header>
-                <div class="nav">
-                    <h2>STUDY STRAGE</h1>
+                <div class="title" style="font-size: 30px;">
+                    <a class="title-font" href="/">STUDY STRAGE</a>
                 </div>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
@@ -28,14 +27,20 @@
                             document.getElementById('logout-form').submit();" class="dropdown-menu">
                                 Logout</a>
                             <form id="logout-form" action="http://localhost:8000/logout" method="POST" style="display: none;"><input type="hidden" name="_token" value="u7eCYSh2WT3bQiJZ1ai0zbahSqYKbHRR2MB10BVM"></form>
-                            <!-- <a class="dropdown-item" href="#">Logout</a> -->
                             </div>
                         </li>
                     </ul>
                 </header>
             <div class="main">
+                <div class="search">
+                    <div class="search-box">
+                        <input type="text" class="form-control search-input" id="exampleFormControlInput1" name='keyword' autocomplete="off">
+                    </div>
+                    <div class="searched-box">
+                        <a class="search-study" href="/">aaa</a>
+                    </div>
+                </div>
                 <div class="keyword-content">
-                    <button class="Learn More">Learn More</button>
                     <h4>latest 10</h4>
                     @foreach($studies as $s)
                     <a style="display:block; margin:10px;" href="/study/{{$s->id}}">{{$s->keyword}}<span style="margin-left:50px; font-size:15px;">{{date('Y年m月d日 H時i分',strtotime($s->created_at))}}</span></a>
