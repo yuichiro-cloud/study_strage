@@ -17,16 +17,18 @@
                 </div>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/create">Addition</a>
+                        <a class="nav-link active" href="/create">Add</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Graph</a>
-                            <a class="dropdown-item" href="http://localhost:8000/logout" onclick="event.preventDefault();
+                            <a class="dropdown-item" href="/logout" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();" class="dropdown-menu">
                                 Logout</a>
-                            <form id="logout-form" action="http://localhost:8000/logout" method="POST" style="display: none;"><input type="hidden" name="_token" value="u7eCYSh2WT3bQiJZ1ai0zbahSqYKbHRR2MB10BVM"></form>
+                            <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                             </div>
                         </li>
                     </ul>

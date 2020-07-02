@@ -1,11 +1,8 @@
 $(function(){
     $('.search-input').keyup(function(){
-        $.when(
             console.log('keyup'),
             $(".searched-box").empty(),
             console.log('clean')
-
-        ).done(function(){
 
             const input_text = $('.search-input').val();
             $(function(){
@@ -23,6 +20,5 @@ $(function(){
                     }
                 });
             });
-        });
     })
 })

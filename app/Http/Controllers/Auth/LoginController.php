@@ -42,7 +42,7 @@ class LoginController extends Controller
     /**
      * GitHubの認証ページヘユーザーをリダイレクト
      *
-     * return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function redirectToProvider()
     {
@@ -52,12 +52,12 @@ class LoginController extends Controller
     /**
      * GitHubからユーザー情報を取得
      *
-     * return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function handleProviderCallback()
     {
         $user = Socialite::driver('github')->user();
-
+        dd($user);
         // $user->token;
     }
 }

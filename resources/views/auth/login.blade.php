@@ -69,5 +69,13 @@
             </div>
         </div>
     </div>
+    <div class="row justify-content--center">
+         SNSでログイン
+        <i class="fab fa-github">
+            <a href="/login/github">GitHub</a>
+        </i>
+    </div>
 </div>
 @endsection
+
+<!-- <a href="/login/social/github" class="C-socialLoginButton C-socialLoginButton--backgroundColorGray1 C-socialLoginButton--small C-socialLoginButton--github U-fz13" rel="nofollow">GitHub</a> -->
