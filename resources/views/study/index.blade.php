@@ -5,7 +5,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/index.css') }}" rel="stylesheet">
         <script src="{{ asset('js/get_study.js') }}" defer></script>
         <script src="{{ asset('js/search.js') }}" defer></script>
