@@ -95,11 +95,7 @@
 
 $(function () {
   $('.search-input').keyup(function () {
-    if ($(".searched-box").children().length != 0) {
-      $(".searched-box").empty();
-    } // $(".searched-box").child.remove();
-
-
+    $(".searched-box").empty();
     var input_text = $('.search-input').val();
     $(function () {
       $.ajax({
@@ -110,14 +106,11 @@ $(function () {
         }
       }).done(function (response) {
         console.log(response);
-        var searched = response; // searched.each(function(index){
-        //     console.log(index);
-        // })
+        var searched = response;
 
         for (var i in searched) {
           $(".searched-box").append("<a class=\"search-study\" href=\"/study/".concat(searched[i].id, "\">").concat(searched[i].keyword, "</a>"));
-        } // $(".search-box").append(`<a href="/study/1">aaaa</a>`)
-
+        }
       });
     });
   });

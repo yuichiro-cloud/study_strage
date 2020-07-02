@@ -168,6 +168,7 @@ class StudyController extends Controller
         // preg_match("/PHP/", "今PHPを勉強しています。"
         // $studies = Study::where('keyword',"{$word}")->get();
         // $studies = "SELECT * FROM studies WHERE id =  1";
-        return ($searched_studies);
+        // return ($searched_studies);
+        return (array_slice($searched_studies , 0, 5));
     }
 }

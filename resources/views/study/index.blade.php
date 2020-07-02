@@ -37,7 +37,7 @@
                         <input type="text" class="form-control search-input" id="exampleFormControlInput1" name='keyword' autocomplete="off">
                     </div>
                     <div class="searched-box">
-                        <a class="search-study" href="/">aaa</a>
+                        <!-- <a class="search-study" href="/">hoge</a> -->
                     </div>
                 </div>
                 <div class="keyword-content">
