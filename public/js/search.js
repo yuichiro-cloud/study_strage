@@ -95,22 +95,23 @@
 
 $(function () {
   $('.search-input').keyup(function () {
-    $(".searched-box").empty();
-    var input_text = $('.search-input').val();
-    $(function () {
-      $.ajax({
-        type: 'GET',
-        url: '/search',
-        data: {
-          'word': input_text
-        }
-      }).done(function (response) {
-        console.log(response);
-        var searched = response;
+    $.when(console.log('keyup'), $(".searched-box").empty(), console.log('clean')).done(function () {
+      var input_text = $('.search-input').val();
+      $(function () {
+        $.ajax({
+          type: 'GET',
+          url: '/search',
+          data: {
+            'word': input_text
+          }
+        }).done(function (response) {
+          console.log(response);
+          var searched = response;
 
-        for (var i in searched) {
-          $(".searched-box").append("<a class=\"search-study\" href=\"/study/".concat(searched[i].id, "\">").concat(searched[i].keyword, "</a>"));
-        }
+          for (var i in searched) {
+            $(".searched-box").append("<a class=\"search-study\" href=\"/study/".concat(searched[i].id, "\">").concat(searched[i].keyword, "</a>"));
+          }
+        });
       });
     });
   });

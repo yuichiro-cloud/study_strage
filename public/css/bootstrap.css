@@ -179,6 +179,10 @@ a.search-study {
     height: 32px;
     margin: 4px;
 }
+a.search-study:hover{
+    background-color: lightgray;
+    text-decoration: none;
+}
 
 a:not([href]) {
   color: inherit;
