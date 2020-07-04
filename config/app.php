@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         //github socialite
         Laravel\Socialite\SocialiteServiceProvider::class,
+        //serviceprovider
+        // \SocialiteProviders\Manager\ServiceProvider::class,
     ],
 
     /*

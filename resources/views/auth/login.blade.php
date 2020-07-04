@@ -74,6 +74,9 @@
         <i class="fab fa-github">
             <a href="/login/github">GitHub</a>
         </i>
+        <i class="fab fa-line">
+            <a href="/login/line">Line</a>
+        </i>
     </div>
 </div>
 @endsection
