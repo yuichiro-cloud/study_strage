@@ -14,9 +14,9 @@ class StudyController extends Controller
 {
 
     public function index(Request $request){
-        $studies = Study::orderBy('id','DESC')->take(10)->get();
+        $user = Auth::user();
+        $studies = Study::where('user_id',$user->id)->orderBy('created_at','desc')->take(10)->get();
         return view('study.index',['studies'=>$studies]);
-        // return $studies;
     }
 
     public function create(Request $request){

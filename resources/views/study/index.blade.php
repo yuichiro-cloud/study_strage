@@ -29,32 +29,39 @@
                             <form id="logout-form" action="/logout" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                            </div>
-                        </li>
-                    </ul>
-                </header>
-            <div class="main">
-                <div class="search">
-                    <div class="search-box">
-                        <input type="text" class="form-control search-input" id="exampleFormControlInput1" name='keyword' autocomplete="off">
-                    </div>
-                    <div class="searched-box">
-                        <!-- <a class="search-study" href="/">hoge</a> -->
-                    </div>
+                        </div>
+                    </li>
+                </ul>
+            </header>
+        <div class="main">
+            <div class="search">
+                <div class="search-box">
+                    <input type="text" class="form-control search-input" id="exampleFormControlInput1" name='keyword' autocomplete="off">
                 </div>
-                <div class="keyword-content">
-                    <h4>latest 10</h4>
-                    @foreach($studies as $s)
-                    <a style="display:block; margin:10px;" href="/study/{{$s->id}}">{{$s->keyword}}<span style="margin-left:50px; font-size:15px;">{{date('Y年m月d日 H時i分',strtotime($s->created_at))}}</span></a>
-                    @endforeach
+                <div class="searched-box">
+                    <!-- <a class="search-study" href="/">hoge</a> -->
                 </div>
-                <div class="graph-content">
+            </div>
+            <div class="keyword-content">
+                <h4>latest 10</h4>
+                @foreach($studies as $s)
+                <a style="display:block; margin:10px;" href="/study/{{$s->id}}">{{$s->keyword}}<span style="margin-left:50px; font-size:15px;">{{date('Y年m月d日 H時i分',strtotime($s->created_at))}}</span></a>
+                @endforeach
+            </div>
+            <ul class="nav justify-content-end">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">切り替え</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Graph</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="graph-content">
                 <canvas id="chart"></canvas>
-                <div id="app">
-
+                    <div id="app">
+                    </div>
                 </div>
-                </div>
-                </div>
+            </div>
         </div>
     </body>
-    </html>
+</html>
