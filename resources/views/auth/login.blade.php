@@ -74,11 +74,6 @@
         <i class="fab fa-github">
             <a href="/login/github">GitHub</a>
         </i>
-        <i class="fab fa-line">
-            <a href="/login/line">Line</a>
-        </i>
     </div>
 </div>
 @endsection
-
-<!-- <a href="/login/social/github" class="C-socialLoginButton C-socialLoginButton--backgroundColorGray1 C-socialLoginButton--small C-socialLoginButton--github U-fz13" rel="nofollow">GitHub</a> -->

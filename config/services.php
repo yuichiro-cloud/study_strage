@@ -35,10 +35,5 @@ return [
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
         'redirect' => '/login/github/callback',
     ],
-    'line' => [
-        'client_id' => env('LINE_CHANNEL_ID'),
-        'client_secret' => env('LINE_CHANNEL_SECRET'),
-        'redirect' => env('LINE_CALLBACKURL'),
-    ]
 
 ];

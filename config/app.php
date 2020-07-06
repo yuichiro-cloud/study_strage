@@ -177,7 +177,7 @@ return [
         //github socialite
         Laravel\Socialite\SocialiteServiceProvider::class,
         //serviceprovider
-        // \SocialiteProviders\Manager\ServiceProvider::class,
+        // SocialiteProviders\Manager\ServiceProvider::class,
     ],
 
     /*

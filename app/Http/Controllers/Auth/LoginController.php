@@ -69,9 +69,5 @@ class LoginController extends Controller
         'name'=>$user->getNickName()]);
         auth()->login($authUser);
         return redirect()->to('/home');
-
-        // dd($authUser);
-        // $user->token;
     }
-
 }
