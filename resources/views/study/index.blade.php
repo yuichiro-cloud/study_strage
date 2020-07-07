@@ -6,7 +6,6 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/index.css') }}" rel="stylesheet">
-        <script src="{{ asset('js/get_study.js') }}" defer></script>
         <script src="{{ asset('js/search.js') }}" defer></script>
     </head>
     <body>
@@ -48,16 +47,9 @@
                 <a style="display:block; margin:10px;" href="/study/{{$s->id}}">{{$s->keyword}}<span style="margin-left:50px; font-size:15px;">{{date('Y年m月d日 H時i分',strtotime($s->created_at))}}</span></a>
                 @endforeach
             </div>
-            <ul class="nav justify-content-end">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">切り替え</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Graph</a>
-                    </div>
-                </li>
-            </ul>
+            <a href="/graph" class="nav justify-content-end">グラフ詳細</a>
             <div class="graph-content">
-                <canvas id="chart"></canvas>
+                <canvas id="chart" name='chart'></canvas>
                     <div id="app">
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,10 +30,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/getStudy','StudyController@getStudy')->name('study.getStudy');
     Route::post('/lanStore','StudyController@lanStore')->name('study.lanStore');
     Route::get('/search', 'StudyController@search')->name('study.search');
+
   });
 Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
-Route::get('login/line', 'Auth\LoginController@lineRedirectToProvider');
-Route::get('login/line/callback', 'Auth\LoginController@lineHandleProviderCallback');
-
 Route::get('/home', 'HomeController@index')->name('home');
