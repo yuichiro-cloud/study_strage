@@ -19,7 +19,7 @@ class CreateStudiesTable extends Migration
             $table->string('time_start');
             $table->string('time_end');
             $table->integer('minutes');
-            $table->text('memo');
+            $table->text('memo')->nullable();
             $table->string('keyword');
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')->references('id')->on('languages');

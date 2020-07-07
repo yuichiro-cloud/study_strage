@@ -49711,8 +49711,6 @@ $(function () {
     var value_lan = minutes.map(function (minute) {
       return minute[1];
     });
-    console.log(lavel_lan);
-    console.log(value_lan);
     graph(lavel_lan, value_lan);
   });
 });

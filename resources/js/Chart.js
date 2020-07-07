@@ -38,8 +38,6 @@ $(function(){
         const minutes = response;
         const lavel_lan = minutes.map(minute=>minute[0]);
         const value_lan = minutes.map(minute=>minute[1])
-        console.log(lavel_lan);
-        console.log(value_lan);
         graph(lavel_lan,value_lan);
     });
 });

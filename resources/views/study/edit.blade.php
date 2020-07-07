@@ -22,7 +22,10 @@
                     @csrf
                     <input type="hidden" name="user_id" value="{{$study->user_id}}">
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">KeyWord</label>
+                        <label for="exampleFormControlInput1">KeyWord(10文字以下)</label>
+                        @if($errors->has('keyword'))
+                        <div class="error_msg" style="color:red;">{{ $errors->first('keyword') }}</div>
+                        @endif
                         <input type="text" class="form-control" id="exampleFormControlInput1" value="{{$study->keyword}}" name="keyword">
                     </div>
                     <div class="form-group">

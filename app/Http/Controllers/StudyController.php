@@ -28,6 +28,10 @@ class StudyController extends Controller
     }
 
     public function store(Request $request){
+        $rules = [
+            'keyword' =>['required','max:10','required','min:1'],
+        ];
+         $this->validate($request,$rules);
 
         $study = new Study;
         $study->keyword = $request->keyword;
@@ -84,6 +88,10 @@ class StudyController extends Controller
     }
 
     public function update(Request $request,$id){
+        $rules = [
+            'keyword' =>['required','max:10','required','min:1'],
+        ];
+         $this->validate($request,$rules);
         $study = Study::find($id);
         $study->keyword = $request->keyword;
         $study->time_start = $request->study_start;

@@ -16,12 +16,11 @@
                 </div>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/create">Add</a>
+                        <a class="nav-link active" href="/create">追加</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Graph</a>
                             <a class="dropdown-item" href="/logout" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();" class="dropdown-menu">
                                 Logout</a>
@@ -47,7 +46,7 @@
                 <a style="display:block; margin:10px;" href="/study/{{$s->id}}">{{$s->keyword}}<span style="margin-left:50px; font-size:15px;">{{date('Y年m月d日 H時i分',strtotime($s->created_at))}}</span></a>
                 @endforeach
             </div>
-            <a href="/graph" class="nav justify-content-end">グラフ詳細</a>
+            <!-- <a href="/graph" class="nav justify-content-end">グラフ詳細</a> -->
             <div class="graph-content">
                 <canvas id="chart" name='chart'></canvas>
                     <div id="app">

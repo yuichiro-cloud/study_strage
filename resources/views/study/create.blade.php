@@ -14,27 +14,17 @@
                 <div class="title" style="font-size: 30px;">
                     <a class="title-font" href="/">STUDY STRAGE</a>
                 </div>
-                    <ul class="nav justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/">home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Graph</a>
-                                <a class="dropdown-item" href="#">Edit</a>
-                                <a class="dropdown-item" href="#">Logout</a>
-                            </div>
-                        </li>
-                    </ul>
             </header>
             <div class="main">
                 <form name="form1" action="/store" method='post'>
                     @csrf
                     <input type='hidden' name='user_id' value="{{$user->id}}"><br>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">KeyWord</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="laravel training" name='keyword'>
+                        <label for="exampleFormControlInput1">KeyWord(10文字以下)</label>
+                        @if($errors->has('keyword'))
+                        <div class="error_msg" style="color:red;">{{ $errors->first('keyword') }}</div>
+                        @endif
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="any keyword" name='keyword' required='require'>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Language select</label>
