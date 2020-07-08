@@ -69,11 +69,19 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content--center">
-         SNSでログイン
-        <i class="fab fa-github">
-            <a href="/login/github">GitHub</a>
-        </i>
+    <div class="row justify-content-center" style="margin-top: 30px;">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('SNSでログイン') }}</div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-around">
+                            <!-- <i class="fab fa-github" style="font-size:1.1em;">
+                            </i> -->
+                        <a class="btn btn-dark" href="/login/github" style="color:white; margin-left:5px; letter-spacing:2px;">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
