@@ -29,7 +29,7 @@ class StudyController extends Controller
 
     public function store(Request $request){
         $rules = [
-            'keyword' =>['required','max:10','required','min:1'],
+            'keyword' =>['required','max:10','min:1'],
         ];
          $this->validate($request,$rules);
 
