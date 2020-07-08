@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Http\Request;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -67,6 +69,22 @@ class LoginController extends Controller
         $authUser = \App\User::firstOrCreate(['email'=> $user->getEmail(),
         'name'=>$user->getNickName()]);
         auth()->login($authUser);
-        return redirect()->to('/home');
+        return redirect()->to('/');
     }
+
+    public function testLogin(Request $request)
+    {
+        // dd($request);
+        // $user = User::where('email',$request->email)->get();
+        $user = \App\User::firstOrCreate(['email'=> $request->email,'name'=>$request->name]);
+        auth()->login($user);
+        return ('200');
+    }
+
+    public function redirectPath()
+    {
+        return '/';
+    }
+
+
 }

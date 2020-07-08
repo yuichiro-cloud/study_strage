@@ -175,4 +175,5 @@ class StudyController extends Controller
         return (array_slice($searched_studies , 0, 5));
     }
 
+
 }
