@@ -66,8 +66,11 @@ class StudyController extends Controller
             $time_hour = intdiv($time_dif,60);
             $time_minute = $time_dif%60;
         }
+        $search = array('&','"',"'",'<','>');
+        $replace = array('&amp;','&quot;','&#39;','&lt;','&gt;');
+        $code_memo = str_replace($search, $replace , $study->memo);
 
-        return view('study.show',['study'=>$study,'time_hour'=>$time_hour,'time_minute'=>$time_minute,'language'=>$language]);
+        return view('study.show',['study'=>$study,'time_hour'=>$time_hour,'time_minute'=>$time_minute,'language'=>$language, 'code_memo'=>$code_memo]);
     }
 
     public function edit(Request $request){

@@ -60,7 +60,7 @@
                     </li>
                 </ul>
                 <div style="background-color:#EEEEEE;" class="content">
-                    {!! nl2br(e($study->memo)) !!}
+                    {!! "<pre><code>{$code_memo}</code></pre>" !!}
                 </div>
 
 
