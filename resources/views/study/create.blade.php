@@ -24,7 +24,7 @@
                         @if($errors->has('keyword'))
                         <div class="error_msg" style="color:red;">{{ $errors->first('keyword') }}</div>
                         @endif
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="any keyword" name='keyword' required='require'>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="キーワード" name='keyword' required='require'>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Language select</label>
@@ -38,7 +38,7 @@
                         <div class="form-row align-items-center">
                             <div class="col-auto" id="lan-input-form">
                             <label class="sr-only" for="inlineFormInput">Name</label>
-                            <input type="text" class="form-control mb-2 add-lan" id="inlineFormInput" placeholder="if Lan not in select">
+                            <input type="text" class="form-control mb-2 add-lan" id="inlineFormInput" placeholder="言語を追加するときはこちら" style="font-size: 17px;">
                             </div>
                             <div class="col-auto">
                             <button id="add-btn" type="button" class="btn btn-primary mb-2">Add</button>

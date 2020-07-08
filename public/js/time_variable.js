@@ -96,14 +96,10 @@
 $(function () {
   function study_start_cal(h, m) {
     $('#start-input').val(h + m);
-    console.log(h);
-    console.log(m);
   }
 
   function study_end_cal(h, m) {
     $('#end-input').val(h + m);
-    console.log(h);
-    console.log(m);
   }
 
   $('#study_start_h').on('change', function () {
@@ -142,16 +138,14 @@ $(function () {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
     });
-    var l_lan = lan_input.toLocaleLowerCase(); // console.log(l_lan)
-
+    var l_lan = lan_input.toLocaleLowerCase();
     $.ajax({
       type: 'POST',
       url: '/lanStore',
       data: {
         'language': lan_input,
         'lower_language': l_lan
-      } // dataType:'json',
-
+      }
     }).done(function (response) {
       if (response == 'already exits') {
         alert("".concat(lan_input, "\u306F\u8A00\u8A9E\u306B\u5B58\u5728\u3057\u3066\u3044\u307E\u3059"));
@@ -159,9 +153,7 @@ $(function () {
         $(".language-select").append("<option>".concat(lan_input, "</option>"));
         alert("".concat(lan_input, "\u3092\u8A00\u8A9E\u306B\u8FFD\u52A0\u3057\u307E\u3057\u305F"));
       }
-    }).fail(function (response) {
-      console.log('fail');
-    });
+    }).fail(function (response) {});
   });
 });
 

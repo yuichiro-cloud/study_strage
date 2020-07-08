@@ -1,14 +1,10 @@
 $(function(){
     function study_start_cal(h,m){
         $('#start-input').val(h+m)
-        console.log(h)
-        console.log(m)
     }
 
     function study_end_cal(h,m){
         $('#end-input').val(h+m)
-        console.log(h)
-        console.log(m)
     }
     $('#study_start_h').on('change',function(){
         var styStrH = $("#study_start_h option:selected").text();
@@ -47,12 +43,10 @@ $(function(){
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
         });
         const l_lan = lan_input.toLocaleLowerCase();
-        // console.log(l_lan)
         $.ajax({
             type:'POST',
             url:'/lanStore',
             data:{'language':lan_input,'lower_language':l_lan},
-            // dataType:'json',
         })
         .done(function(response){
             if(response == 'already exits'){
@@ -63,7 +57,6 @@ $(function(){
             }
         })
         .fail(function(response){
-            console.log('fail');
         })
     })
 });

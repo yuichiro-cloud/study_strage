@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -95,7 +95,6 @@
 
 $(function () {
   $('.search-input').keyup(function () {
-    console.log('keyup'), $(".searched-box").empty(), console.log('clean');
     var input_text = $('.search-input').val();
     $(function () {
       $.ajax({
@@ -105,7 +104,7 @@ $(function () {
           'word': input_text
         }
       }).done(function (response) {
-        console.log(response);
+        $(".searched-box").empty();
         var searched = response;
 
         for (var i in searched) {
@@ -118,7 +117,7 @@ $(function () {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!**************************************!*\
   !*** multi ./resources/js/search.js ***!
   \**************************************/

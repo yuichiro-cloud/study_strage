@@ -1,9 +1,5 @@
 $(function(){
     $('.search-input').keyup(function(){
-            console.log('keyup'),
-            $(".searched-box").empty(),
-            console.log('clean')
-
             const input_text = $('.search-input').val();
             $(function(){
                 $.ajax({
@@ -13,7 +9,7 @@ $(function(){
 
                 })
                 .done(function(response){
-                    console.log(response)
+                    $(".searched-box").empty()
                     const searched = response;
                     for (var i in searched){
                         $(".searched-box").append(`<a class="search-study" href="/study/${searched[i].id}">${searched[i].keyword}</a>`)
