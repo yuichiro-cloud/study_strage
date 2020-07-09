@@ -11,7 +11,7 @@ $(function(){
 
         })
         .done(function(response){
-            window.location.href = "http://localhost:8000/";
+            window.location.href = "/";
         });
     })
 });
