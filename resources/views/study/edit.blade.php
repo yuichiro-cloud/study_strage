@@ -3,8 +3,8 @@
     <head>
         <title>StudyStrage</title>
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/edit.js') }}" defer></script>
-        <script src="{{ asset('js/time_variable.js') }}" defer></script>
+        <!-- <script src="{{ asset('js/edit.js') }}" defer></script> -->
+        <script src="{{ asset('js/create_edit.js') }}" defer></script>
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/create.css') }}" rel="stylesheet">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -116,10 +116,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Memo Area</label>
-                        <!-- <span class="code-button">code</span> -->
-                        <!-- <input style="display:none;" type="checkbox"  name="code-check" value="red" > -->
-                        <!-- <input type="checkbox" class="code_check" name="code_check" value={{$study->code_check}}> -->
-                        <textarea class="form-control memo-area" id="exampleFormControlTextarea1" rows="20" name='memo'>{{$study->memo}}</textarea>
+                        <textarea class="form-control" id="memo-area" name='memo'>{{$study->memo}}</textarea>
                     </div>
                     <input style="display:block; margin:0 auto;" type="submit" value="put" />
                 </form>
@@ -127,10 +124,3 @@
         </div>
     </body>
 </html>
-
-
-<!-- <div aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-right show">
-    <a href="http://localhost:8000/logout" onclick="event.preventDefault();
-    document.getElementById('logout-form').submit();" class="dropdown-item">
-        Logout</a>
-    <form id="logout-form" action="http://localhost:8000/logout" method="POST" style="display: none;"><input type="hidden" name="_token" value="u7eCYSh2WT3bQiJZ1ai0zbahSqYKbHRR2MB10BVM"></form></div> -->

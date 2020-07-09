@@ -2,9 +2,9 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/create_edit.js": "/js/create_edit.js",
     "/js/delete.js": "/js/delete.js",
     "/js/highlight.pack.js": "/js/highlight.pack.js",
     "/js/search.js": "/js/search.js",
-    "/js/time_variable.js": "/js/time_variable.js",
     "/js/user_test.js": "/js/user_test.js"
 }

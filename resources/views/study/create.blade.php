@@ -3,7 +3,7 @@
     <head>
         <title>StudyStrage</title>
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/time_variable.js') }}" defer></script>
+        <script src="{{ asset('js/create_edit.js') }}" defer></script>
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/study/create.css') }}" rel="stylesheet">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -91,9 +91,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Memo Area</label>
-                        <!-- <span class="code-button">code</span> -->
-                        <!-- <input type="checkbox" class="code_check" name="code_check" value='0'> -->
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='memo'></textarea>
+                        <textarea class="form-control " id="memo-area"  name='memo'></textarea>
                     </div>
                     <input style="display:block; margin:0 auto;" type="submit" value="post" />
                 </form>

@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/time_variable.js":
-/*!***************************************!*\
-  !*** ./resources/js/time_variable.js ***!
-  \***************************************/
+/***/ "./resources/js/create_edit.js":
+/*!*************************************!*\
+  !*** ./resources/js/create_edit.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -156,17 +156,28 @@ $(function () {
     }).fail(function (response) {});
   });
 });
+$(function () {
+  var def_textarea = document.getElementById('memo-area');
+  def_textarea.style.height = def_textarea.scrollHeight + 'px';
+  $('#memo-area').on('keyup', function () {
+    var textarea = document.getElementById('memo-area');
+
+    if (textarea.scrollHeight > textarea.offsetHeight) {
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+  });
+});
 
 /***/ }),
 
 /***/ 2:
-/*!*********************************************!*\
-  !*** multi ./resources/js/time_variable.js ***!
-  \*********************************************/
+/*!*******************************************!*\
+  !*** multi ./resources/js/create_edit.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/study_strage/resources/js/time_variable.js */"./resources/js/time_variable.js");
+module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/study_strage/resources/js/create_edit.js */"./resources/js/create_edit.js");
 
 
 /***/ })

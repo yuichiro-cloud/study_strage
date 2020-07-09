@@ -61,3 +61,14 @@ $(function(){
     })
 });
 
+$(function(){
+    let def_textarea = document.getElementById('memo-area');
+    def_textarea.style.height = def_textarea.scrollHeight+'px';
+    $('#memo-area').on('keyup',function(){
+        let textarea = document.getElementById('memo-area');
+        if( textarea.scrollHeight > textarea.offsetHeight ){
+            textarea.style.height = textarea.scrollHeight+'px';
+        }
+    });
+});
+
