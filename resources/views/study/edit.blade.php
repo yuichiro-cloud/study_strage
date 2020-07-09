@@ -22,7 +22,7 @@
                     @csrf
                     <input type="hidden" name="user_id" value="{{$study->user_id}}">
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">KeyWord(10文字以下)</label>
+                        <label for="exampleFormControlInput1">KeyWord(20文字以下)</label>
                         @if($errors->has('keyword'))
                         <div class="error_msg" style="color:red;">{{ $errors->first('keyword') }}</div>
                         @endif
@@ -115,7 +115,7 @@
                         <input id="end-input" name='study_end' type='hidden' value={{$study->time_end}}>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Memo Area</label>
+                        <label for="exampleFormControlTextarea1">Memo Area(8000文字以下)</label>
                         <textarea class="form-control" id="memo-area" name='memo'>{{$study->memo}}</textarea>
                     </div>
                     <input style="display:block; margin:0 auto;" type="submit" value="put" />

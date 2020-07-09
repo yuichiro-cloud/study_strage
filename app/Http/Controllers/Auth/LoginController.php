@@ -72,6 +72,36 @@ class LoginController extends Controller
         return redirect()->to('/');
     }
 
+     /**
+     * Googleの認証ページヘユーザーをリダイレクト
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function googleRedirectToProvider()
+    {
+        return Socialite::driver('google')->redirect();
+        // dd(Socialite::driver('github')->redirect());
+    }
+
+    /**
+     * GitHubからユーザー情報を取得
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function googleHandleProviderCallback()
+    {
+        try {
+            $user = Socialite::driver('google')->user();
+        } catch (\Exception $e) {
+            return redirect('/login');
+        }
+        $authUser = $user->name;
+        $authUser = \App\User::firstOrCreate(['email'=> $user->getEmail(),
+        'name'=>$user->getName()]);
+        auth()->login($authUser);
+        return redirect()->to('/');
+    }
+
     public function testLogin(Request $request)
     {
         // dd($request);

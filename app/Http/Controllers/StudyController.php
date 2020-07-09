@@ -29,7 +29,8 @@ class StudyController extends Controller
 
     public function store(Request $request){
         $rules = [
-            'keyword' =>['required','max:10','min:1'],
+            'keyword' =>['required','max:20','min:1'],
+            'memo'    =>['max:8000'],
         ];
          $this->validate($request,$rules);
 
@@ -92,7 +93,8 @@ class StudyController extends Controller
 
     public function update(Request $request,$id){
         $rules = [
-            'keyword' =>['required','max:10','required','min:1'],
+            'keyword' =>['required','max:20','required','min:1'],
+            'memo'    =>['max:8000'],
         ];
          $this->validate($request,$rules);
         $study = Study::find($id);

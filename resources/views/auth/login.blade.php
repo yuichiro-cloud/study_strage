@@ -75,9 +75,14 @@
                 <div class="card-header">{{ __('SNSでログイン') }}</div>
                 <div class="card-body">
                     <div class="d-flex justify-content-around">
-                            <!-- <i class="fab fa-github" style="font-size:1.1em;">
-                            </i> -->
-                        <a class="btn btn-dark" href="/login/github" style="color:white; margin-left:5px; letter-spacing:2px;">GitHub</a>
+                        <a class="btn btn-dark" href="/login/github" style="color:white; margin-left:5px; letter-spacing:2px;">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                        </a>
+                        <a class="btn btn-success" href="/login/google" style="color:white; margin-left:5px; letter-spacing:2px;">
+                        <i class="fab fa-google"></i>
+                        Google
+                        </a>
                     </div>
                 </div>
             </div>
