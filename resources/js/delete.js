@@ -11,7 +11,8 @@ $(function(){
 
         })
         .done(function(response){
-            window.location.href = "/";
+            // window.location.href = "/";
+            window.location.href = "http://studystrage.cf/";
         });
     })
 });
