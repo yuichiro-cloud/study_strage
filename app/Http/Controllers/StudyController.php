@@ -57,6 +57,9 @@ class StudyController extends Controller
 
     public function show($id){
         $study = Study::find($id);
+        if ($study->user_id !== Auth::user()->id){
+            return redirect('/');
+        }
         $language = Language::find($study->language_id);
         $time_dif = $study->minutes;
         if($time_dif>=0){
